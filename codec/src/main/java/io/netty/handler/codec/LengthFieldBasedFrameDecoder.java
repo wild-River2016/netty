@@ -41,10 +41,10 @@ import java.util.List;
  * length field.  Therefore, it can be decoded with the simplistic parameter
  * combination.
  * <pre>
- * <b>lengthFieldOffset</b>   = <b>0</b>
- * <b>lengthFieldLength</b>   = <b>2</b>
- * lengthAdjustment    = 0
- * initialBytesToStrip = 0 (= do not strip header)
+ * <b>lengthFieldOffset</b>   = <b>0</b>  位移，比如length往后移1位
+ * <b>lengthFieldLength</b>   = <b>2</b>  内容的长度
+ * lengthAdjustment    = 0  假如length和内容中间加2个字节的内容，那通过length+2就能得到中间加的内容和content内容
+ * initialBytesToStrip = 0 (= do not strip header) 解码前有长度，比如不想有长度，可以直接跳过length
  *
  * BEFORE DECODE (14 bytes)         AFTER DECODE (14 bytes)
  * +--------+----------------+      +--------+----------------+
